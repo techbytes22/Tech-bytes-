@@ -96,7 +96,7 @@ body{
 <img src="https://i.ibb.co/7xnndSXv/20260504-110125-0000.png"loading="lazy">
 <div class="product-title">iPhone 15 Pro Max</div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://www.profitablecpmratenetwork.com/yvbteryt1?key=fb7df369b10d6a142bf38e7430e17af2')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://www.profitablecpmratenetwork.com/yvbteryt1?key=fb7df369b10d6a142bf38e7430e17af2')">Order Now</button>
 </div>
 
 <!-- CARD 2 -->
@@ -104,7 +104,7 @@ body{
 <img src="https://i.ibb.co/jk5088BK/20260504-111129-0000.png"loading="lazy">
 <div class="product-title">Samsung S24 Ultra</div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://www.profitablecpmratenetwork.com/yvbteryt1?key=fb7df369b10d6a142bf38e7430e17af2')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://www.profitablecpmratenetwork.com/yvbteryt1?key=fb7df369b10d6a142bf38e7430e17af2')">Order Now</button>
 </div>
 
 <!-- CARD 3 -->
@@ -112,7 +112,7 @@ body{
 <img src="https://i.ibb.co/zhtmd4cs/20260505-000458-0008.png"loading="lazy">
 <div class="product-title">Realme 15X 5G</div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://www.profitablecpmratenetwork.com/yvbteryt1?key=fb7df369b10d6a142bf38e7430e17af2')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://www.profitablecpmratenetwork.com/yvbteryt1?key=fb7df369b10d6a142bf38e7430e17af2')">Order Now</button>
 </div>
 
 <!-- CARD 4 -->
@@ -120,7 +120,7 @@ body{
 <img src="https://i.ibb.co/j9G4GzNf/20260505-000458-0007.png"loading="lazy">
 <div class="product-title">Xiaomi 15 Pro</div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://www.profitablecpmratenetwork.com/di8kim5v?key=197f5d32bc1fed0b9fa9987b2895e8f0')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://www.profitablecpmratenetwork.com/di8kim5v?key=197f5d32bc1fed0b9fa9987b2895e8f0')">Order Now</button>
 </div>
 
 <!-- CARD 5 -->
@@ -128,7 +128,7 @@ body{
 <img src="https://i.ibb.co/pvyS9vjP/20260505-000457-0005.png"loading="lazy">
 <div class="product-title">Oppo A6s 5G </div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://omg10.com/4/9676880')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://omg10.com/4/9676880')">Order Now</button>
 </div>
 
 <!-- CARD 6 -->
@@ -136,7 +136,7 @@ body{
 <img src="https://i.ibb.co/pvXpNsKz/20260505-000458-0009.png"loading="lazy">
 <div class="product-title">Realme 13 Pro</div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://www.profitablecpmratenetwork.com/di8kim5v?key=197f5d32bc1fed0b9fa9987b2895e8f0')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://www.profitablecpmratenetwork.com/di8kim5v?key=197f5d32bc1fed0b9fa9987b2895e8f0')">Order Now</button>
 </div>
 
 <!-- CARD 7 -->
@@ -144,7 +144,7 @@ body{
 <img src="https://i.ibb.co/KxFv1CHC/20260505-000457-0002.png"loading="lazy">
 <div class="product-title">Samsung Galaxy A17 </div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://omg10.com/4/9676880')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://omg10.com/4/9676880')">Order Now</button>
 </div>
 
 <!-- CARD 8 -->
@@ -152,7 +152,7 @@ body{
 <img src="https://i.ibb.co/MkCSZyKs/20260505-000457-0003.png"loading="lazy">
 <div class="product-title">Oppo Find X9</div>
 <div class="price">₹10 ONLY</div>
-<button class="btn" onclick="go('https://www.profitablecpmratenetwork.com/di8kim5v?key=197f5d32bc1fed0b9fa9987b2895e8f0')">Order Now</button>
+<button class="btn" onclick="startTimer(this,'https://www.profitablecpmratenetwork.com/di8kim5v?key=197f5d32bc1fed0b9fa9987b2895e8f0')">Order Now</button>
 </div><!--  -->
 
 </div>
@@ -162,6 +162,40 @@ function go(url){
   window.location.href = url;
 }
 </script>
+
+<!-- BOTTON TIMER SCRIPT -->
+
+<script>
+function startTimer(btn, url){
+    let timeLeft = 9.0; // fast timer
+    btn.disabled = true;
+
+    // force style (extra safety)
+    btn.style.background = "#ffcc00";
+    btn.style.color = "#000";
+
+    let countdown = setInterval(() => {
+        btn.innerText = "Wait " + timeLeft.toFixed(1) + "s";
+        timeLeft -= 0.1;
+
+        if(timeLeft <= 0){
+            clearInterval(countdown);
+            window.location.href = url;
+        }
+    }, 100);
+}
+</script>
+
+
+<!-- FOOTER -->
+
+<footer style="background:#111; color:#fff; padding:1px 1px; text-align:center; font-family:Arial;">
+
+  <p style="margin-top:5px; font-size:10px; color:#777;">
+    © 2026 Tech Bites Offers. All rights reserved.
+  </p>
+
+</footer>
 
 </body>
 </html>
