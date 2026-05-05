@@ -166,25 +166,44 @@ function go(url){
 <!-- BOTTON TIMER SCRIPT -->
 
 <script>
+let activeTimer = null;     // 🔥 CHANGE: current timer store
+let activeButton = null;    // 🔥 CHANGE: current button store
+
 function startTimer(btn, url){
-    let timeLeft = 6.0; // fast timer
+
+    // 🔥 CHANGE: agar koi timer already chal raha hai
+    if(activeTimer){
+        clearInterval(activeTimer);
+
+        // 🔥 CHANGE: purana button reset
+        if(activeButton){
+            activeButton.disabled = false;
+            activeButton.innerText = "Order Now";
+        }
+    }
+
+    let timeLeft = 6.0;
     btn.disabled = true;
 
-    // force style (extra safety)
+    // 🔥 CHANGE: current button store
+    activeButton = btn;
+
+    // force style
     btn.style.background = "#ffcc00";
     btn.style.color = "#000";
 
-    let countdown = setInterval(() => {
+    activeTimer = setInterval(() => {
         btn.innerText = "Wait " + timeLeft.toFixed(1) + "s";
         timeLeft -= 0.1;
 
         if(timeLeft <= 0){
-            clearInterval(countdown);
+            clearInterval(activeTimer);
             window.location.href = url;
         }
     }, 100);
 }
 </script>
+
 
 
 <!-- FOOTER -->
